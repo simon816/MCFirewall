@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "https://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+repositories {
+    maven {
+        name = 'sponge'
+        url = 'https://repo.spongepowered.org/maven'
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    // Stop AP generating a mcmod.info file
+    options.compilerArgs += '-proc:none'
+}
+
+version = '1.0.0'
+
+minecraft {
+    version = "1.12.2-14.23.5.2768"
+    mappings = "stable_39"
+    runDir = "run"
+    accessTransformer 'src/main/resources/META-INF/at.cfg'
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:7.0.0'
+}
+
+ jar {
+    manifest {
+        attributes 'FMLAT': 'at.cfg'
+    }
+}

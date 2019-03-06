@@ -1,0 +1,19 @@
+[{
+  "modid": "mcfirewall-forge",
+  "name": "Minecraft Firewall",
+  "description": "Adds a firewall to your server in case you can't use a system firewall. Using a system firewall is still recommended.",
+  "version": "1.0.0",
+  "mcversion": "1.12.2",
+  "authorList": ["Simon816"],
+  "requiredMods": ["forge"],
+  "dependencies": ["forge", "spongeforge"]
+},{
+  "modid": "mcfirewall-sponge",
+  "name": "Minecraft Firewall",
+  "description": "Adds a firewall to your server in case you can't use a system firewall. Using a system firewall is still recommended.",
+  "version": "1.0.0",
+  "mcversion": "1.12.2",
+  "authorList": ["Simon816"],
+  "requiredMods": ["sponge"],
+  "dependencies": ["mcfirewall-forge", "spongeforge", "spongevanilla"]
+}]
